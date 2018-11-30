@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Excel日期批量转换</title>
+  <style>
+    body {
+      color: #333;
+    }
+
+    #result {
+      width: 100vw;
+      display: flex;
+    }
+
+    #result div {
+      flex: 1;
+    }
+
+    span.tips {
+      font-size: 14px;
+      padding-left: 8px;
+      color: #999;
+      font-weight: normal;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="contet">
+    <span class="tips">复制Excel转换的数据至输入框即可</span>
+    <textarea name="" id="excel" cols="30" rows="10">
+        8月4日
+        8月4日
+        8月4日
+        8月4日
+        8月4日
+        8月4日
+        8月4日
+        8月7日
+        8月4日
+        8月8日
+        8月8日
+        8/11/2018
+
+
+
+
+
+
+        8/14/2018</textarea>
+    <button id="go">转换</button>
+  </div>
+  <div id="result">
+    <div id="original"></div>
+    <div id="data"></div>
+  </div>
+  <script>
+    let excel = document.querySelector('#excel');
+    let original = document.querySelector('#original');
+    let data = document.querySelector('#data');
+    document.querySelector('#go').onclick = function () {
+      let excelData = excel.value.split(/\n/);
+      let originalHTML = '<h2>原始数据</h2><table>';
+      let dataHTML = '<h2>转换后的数据<span class="tips">复制下面所有数据后粘贴到Excel第一个原始数据单元格即可<span></h2><table>';
+      let result = [];
+      excelData.forEach(item => {
+        if (item) {
+          let transData = {};
+          if (item.indexOf('/') > -1) {
+            transData = JSON.parse(item.replace(/(\d+)\/(\d+)\/(\d+)/,
+              `{"year":"$3","month":"$1","day":"$2"}`));
+          } else {
+            transData = JSON.parse(item.replace(/(\d+)月(\d+)日/,
+              `{"year":"2018","month":"$1","day":"$2"}`));
+          }
+          result.push(transData.year + (transData.month.padStart(2, 0)) + (transData.day.padStart(2, 0)));
+        } else {
+          result.push('&nbsp;');
+        }
+      });
+      // 原始数据
+      excelData.forEach(item => {
+        originalHTML += `<tr><td>${item||'&nbsp;'}</td></tr>`;
+      });
+      originalHTML += `</table>`;
+
+      // 转换后数据
+      result.forEach(item => {
+        dataHTML += `<tr><td>${item}</td></tr>`;
+      });
+      dataHTML += `</table>`;
+
+      // 渲染
+      original.innerHTML = originalHTML;
+      data.innerHTML = dataHTML;
+    }
+  </script>
+</body>
+
+</html>
