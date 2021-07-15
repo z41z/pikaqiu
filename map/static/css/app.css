@@ -1,0 +1,75 @@
+img[src="/static/images/icons/icon-my-location.png"] {
+  width: 100%;
+  height: 100%;
+  background: #5addff;
+  border-radius: 100%;
+}
+
+.amap-logo, .amap-copyright {
+  display: none!important;
+}
+
+.van-grid-item__text {
+  font-size: .375rem!important;
+  white-space: nowrap;
+  color: #666!important;
+}
+
+.van-checkbox__icon--disabled {
+  display: none;
+}
+
+.van-checkbox__label--disabled {
+  color: #969799!important;
+}
+
+.van-uploader__wrapper--disabled {
+  opacity: 1!important;
+}
+
+.van-image-preview .van-image__img {
+  /* transform: translateX(0px) rotate(90deg); */
+}
+
+/* .grid-item-7 .van-grid-item__text {
+  font-size: .35rem!important;
+}
+
+@media screen and (max-width:360px) {
+  .grid-item-7 .van-grid-item__text {
+    font-size: .32rem!important;
+  }
+} */
+
+.input-readonly, .input-readonly input, .input-readonly textarea {
+  color: #999;
+}
+
+.van-image-preview img[src^="data:image"] {
+  transform: translateX(0px) rotate(0deg);
+}
+
+.van-field--disabled {
+  color: inherit!important;
+}
+
+.amap-marker-label {
+  position: absolute;
+  z-index: 2;
+  border: 0;
+  white-space: nowrap;
+  cursor: default;
+  padding: 3px;
+  font-size: 12px;
+  line-height: 14px;
+  background: rgba(0, 0, 0, .4);
+  color: #fff;
+  padding: 4px 8px;
+}
+.van-empty{
+  padding: 0!important;
+}
+.van-empty__image{
+  width: 4rem!important;
+  height: 4rem!important;
+}

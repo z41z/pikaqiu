@@ -1,0 +1,17 @@
+{
+  "name": "贵州消防",
+  "short_name": "贵州消防",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#fff",
+  "description": "贵州消防",
+  "orientation": "portrait",
+  "theme_color": "#00aeff",
+  "icons": [
+    {
+      "src": "/static/images/icons/icon-dispatch-alarm-fire.png",
+      "type": "image/png",
+      "sizes": "48x48"
+    }
+  ]
+}

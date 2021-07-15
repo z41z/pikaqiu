@@ -1,0 +1,49 @@
+{
+  "name": "gzxf-intranet",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve --open",
+    "dev": "vue-cli-service serve --open",
+    "dev:noding": "vue-cli-service serve --open --nodingtalk",
+    "dev:in": "vue-cli-service serve --open --intranet",
+    "dev:in:noding": "vue-cli-service serve --open --intranet --nodingtalk",
+    "build": "vue-cli-service build",
+    "build:in": "vue-cli-service build --intranet",
+    "build:noding": "vue-cli-service build --nodingtalk",
+    "build:in:noding": "vue-cli-service build --intranet --nodingtalk",
+    "report": "vue-cli-service build"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "register-service-worker": "^1.6.2",
+    "vant": "^2.8.7",
+    "vue": "^2.6.10",
+    "vue-router": "^3.0.3",
+    "vuex": "^3.0.1",
+    "sp-coord": "^1.0.1",
+    "sp-func": "^1.0.13"
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-optional-chaining": "^7.9.0",
+    "@vue/cli-plugin-babel": "^3.6.0",
+    "@vue/cli-plugin-pwa": "^3.6.0",
+    "@vue/cli-service": "^3.6.0",
+    "babel-plugin-dynamic-import-webpack": "^1.1.0",
+    "caniuse-lite": "^1.0.30001043",
+    "chalk": "^2.4.2",
+    "commander": "^2.20.0",
+    "core-js": "^2.6.5",
+    "cssnano-preset-advanced": "^4.0.7",
+    "less": "^3.0.4",
+    "less-loader": "^4.1.0",
+    "progress-bar-webpack-plugin": "^1.12.1",
+    "vconsole": "^3.3.4",
+    "vue-template-compiler": "^2.5.21"
+  },
+  "browserslist": [
+    "last 2 versions",
+    "> 1%",
+    "not ie <= 8"
+  ]
+}

@@ -1,0 +1,56 @@
+@colorLevelOne  : #4FBD77;
+@colorLevelTwo  : #009CFF;
+@colorLevelThree: #FFB819;
+@colorLevelFour : #FC6D00;
+@colorLevelFive : #FF2727;
+
+@level: {
+  1: @colorLevelOne;
+  2: @colorLevelTwo;
+  3: @colorLevelThree;
+  4: @colorLevelFour;
+  5: @colorLevelFive;
+}
+
+@alarmType: {
+  10000: @colorLevelFive;
+  20000: @colorLevelTwo;
+  30000: @colorLevelThree;
+  40000: @colorLevelFour;
+  50000: @colorLevelOne;
+  60000: #FFB819;
+}
+
+each(@level, {
+    .level-@{key} {
+      color: @value;
+    }
+
+    .level-bg-@{key} {
+      margin-right : 5px;
+      font-weight  : normal;
+      font-size    : .3rem;
+      background   : @value  !important;
+      color        : #fff;
+      border-radius: 2px;
+      padding      : 2px 5px;
+      border       : 1px solid @value;
+    }
+  }
+
+);
+
+each(@alarmType, {
+    .level-type-@{key} {
+      margin-right  : 5px;
+      font-weight   : normal;
+      font-size     : .3rem;
+      background    : ~"@{value}00!important";
+      color         : ~"@{value}80!important";
+      border-radius : 2px;
+      padding       : 2px 5px;
+      border        : ~"1px solid @{value}80!important";
+    }
+  }
+
+);
